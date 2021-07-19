@@ -1,9 +1,10 @@
 package adrian.lai;
 
 import lombok.*;
-
 import javax.persistence.*;
 import java.time.LocalDate;
+
+
 
 @Entity (name = "computer")
 @Table (name = "computer")
@@ -28,14 +29,22 @@ public class Computer {
     //How do I create a computer by just creating it.
     //I don't even want to have to input the date.
 
+    //creates computer with date input
     public Computer(LocalDate creationDate){
         this.creationDate = creationDate;
         this.lastRevisionDate = creationDate;
         this.nextRevisionDate = creationDate.plusYears(2);
-        this.needsRevision = false;
 
+        //condition if computer needs revision
+        if(this.nextRevisionDate.isBefore(LocalDate.now())){
+            this.needsRevision = true;
+        } else {
+            this.needsRevision = false;
         }
 
+    }
+
+    //creates computer at current date
     public Computer(){
         this.creationDate = LocalDate.now();
         this.lastRevisionDate = creationDate;
