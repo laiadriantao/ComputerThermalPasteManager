@@ -55,7 +55,13 @@ public class ComputerDAO {
     public List<Computer> getAllDefectiveComputers(){
 
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
-            System.out.println("\nThese computers need their thermalpaste reapplied!");
+            System.out.println("\nChecking for any dried up thermalpaste...");
+            List<Computer> defComp = session.createQuery("from computer where needs_revision = 1", Computer.class).list();
+            if(defComp.isEmpty() == true){
+                System.out.println("It's all good!");
+            } else {
+                System.out.println("\nIt's revision day!");
+            }
             return session.createQuery("from computer where needs_revision = 1", Computer.class).list();
         }
     }
@@ -67,12 +73,15 @@ public class ComputerDAO {
             computer = session.get(Computer.class,id);
             session.remove(computer);
             transaction.commit();
+
         } catch (Exception e) {
             if(transaction != null){
                 transaction.rollback();
             }
+
         }
         return computer;
+        //if it deletes the wrong id I get an exception that doesn't allow the program to continue.
     }
 
 

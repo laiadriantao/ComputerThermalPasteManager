@@ -17,6 +17,9 @@ public class Main {
 //        Computer computer3 = new Computer(LocalDate.of(1990, 9,22));
 //        computerDAO.saveComputer(computer3);
 
+//       computerDAO.deleteByIdComputers(9);
+
+
 
         List<Computer> computers = computerDAO.getAllComputers();
         computers.forEach(computerget -> System.out.println(computerget.toString()));

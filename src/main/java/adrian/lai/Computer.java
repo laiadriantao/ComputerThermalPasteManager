@@ -24,8 +24,6 @@ public class Computer {
     @Column(name = "needs_revision")
     private boolean needsRevision;
 
-    //How do I create a computer by just creating it.
-    //I don't even want to have to input the date.
 
     //creates computer with date input
     public Computer(LocalDate creationDate){
