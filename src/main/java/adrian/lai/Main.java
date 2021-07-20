@@ -21,6 +21,9 @@ public class Main {
         List<Computer> computers = computerDAO.getAllComputers();
         computers.forEach(computerget -> System.out.println(computerget.toString()));
 
+        List<Computer> defectivecomputers = computerDAO.getAllDefectiveComputers();
+        defectivecomputers.forEach(dcomputerget -> System.out.println(dcomputerget.toString()));
+
 
 
 
