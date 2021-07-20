@@ -8,10 +8,8 @@ import java.time.LocalDate;
 
 @Entity (name = "computer")
 @Table (name = "computer")
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
-@ToString
 public class Computer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

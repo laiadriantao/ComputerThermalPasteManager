@@ -46,8 +46,17 @@ public class ComputerDAO {
         return computer;
     }
     public List<Computer> getAllComputers(){
+
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+            System.out.println("\nYour computer list");
             return session.createQuery("from computer", Computer.class).list();
+        }
+    }
+    public List<Computer> getAllDefectiveComputers(){
+
+        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+            System.out.println("\nThese computers need their thermalpaste reapplied!");
+            return session.createQuery("from computer where needs_revision = 1", Computer.class).list();
         }
     }
     public Computer deleteByIdComputers(int id){
@@ -65,5 +74,7 @@ public class ComputerDAO {
         }
         return computer;
     }
+
+
 
 }
