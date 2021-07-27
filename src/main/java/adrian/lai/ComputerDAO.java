@@ -1,5 +1,6 @@
 package adrian.lai;
 
+import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -48,7 +49,7 @@ public class ComputerDAO {
     public List<Computer> getAllComputers(){
 
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
-            System.out.println("\nYour computer list");
+            //System.out.println("\nYour computer list");
             return session.createQuery("from computer", Computer.class).list();
         }
     }

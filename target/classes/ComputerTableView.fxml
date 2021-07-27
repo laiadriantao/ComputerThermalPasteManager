@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import adrian.lai.Computer ?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adrian.lai.ComputerController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TableView prefHeight="200.0" prefWidth="434.0" GridPane.columnIndex="4" GridPane.rowIndex="1" fx:id="computerTable">
+        <columns>
+            <TableColumn  prefWidth="30.0" resizable="false" text="ID" fx:id="idColumn">
+                <cellValueFactory><PropertyValueFactory property ="id"/></cellValueFactory>
+        </TableColumn>
+          <TableColumn  prefWidth="100.0" resizable="false" text="Creation Date" fx:id="creationColumn">
+              <cellValueFactory><PropertyValueFactory property ="creationDate"/></cellValueFactory>
+      </TableColumn>
+            <TableColumn  prefWidth="100.0" resizable="false" text="Last Revision " fx:id="lastColumn">
+                <cellValueFactory><PropertyValueFactory property ="lastRevisionDate"/></cellValueFactory>
+   </TableColumn>
+            <TableColumn  prefWidth="100.0" resizable="false" text="Next Revision" fx:id="nextColumn">
+                <cellValueFactory><PropertyValueFactory property ="nextRevisionDate"/></cellValueFactory>
+</TableColumn>
+            <TableColumn prefWidth="100.0" resizable="false"  text="Needs Revision" fx:id="revisionColumn">
+                <cellValueFactory><PropertyValueFactory property ="needsRevision"/></cellValueFactory>
+        </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</GridPane>
