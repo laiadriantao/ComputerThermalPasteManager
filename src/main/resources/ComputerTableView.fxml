@@ -45,10 +45,9 @@
       </TableView>
       <HBox prefHeight="15.0" prefWidth="600.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
          <children>
-            <Button mnemonicParsing="false" onAction="#addComputer" text="Add new computer" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" text="Delete computer" />
-            <Button fx:id="revision" mnemonicParsing="false" text="Update Revision " />
-            <Button mnemonicParsing="false" text="Refresh list" />
+            <Button mnemonicParsing="false" onAction="#addRow" text="Add new computer" />
+            <Button fx:id="revision" mnemonicParsing="false" onAction="#updateRowRevision" text="Update Revision " />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#deleteRow" prefHeight="19.0" prefWidth="105.0" text="Delete computer" />
          </children>
       </HBox>
    </children>
