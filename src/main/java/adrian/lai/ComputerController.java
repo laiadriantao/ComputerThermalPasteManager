@@ -2,6 +2,7 @@ package adrian.lai;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -9,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -53,4 +55,13 @@ public class ComputerController implements Initializable {
               //  compList.forEach(comp -> compList.add(comp));
                 return compObsList;
         }
+
+    public void  addComputer(){
+            ComputerDAO computerDao = new ComputerDAO();
+            Computer computer = new Computer();
+            computer.setLastRevisionDate(LocalDate.now());
+            computer.setNextRevisionDate(LocalDate.now().plusYears(2));
+            computerDao.saveComputer(computer);
+             computerTable.setItems(getCompList());
+    }
 }
