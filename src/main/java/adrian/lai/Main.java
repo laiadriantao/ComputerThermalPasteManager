@@ -6,28 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-
-import java.time.LocalDate;
-import java.util.List;
-
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Pane myPane = (Pane) FXMLLoader.load(getClass().getClassLoader().getResource("ComputerTableView.fxml"));
-        primaryStage.setTitle("FXML TableView Example");
+        primaryStage.setTitle("Computer ThermalPaste Manager");
         Scene myScene = new Scene(myPane);
         primaryStage.setScene(myScene);
-
-//        ComputerDAO computerDAO = new ComputerDAO();
-//
-//        List<Computer> computers = computerDAO.getAllComputers();
-//        computers.forEach(computerget -> System.out.println(computerget.toString()));
-//
-//        List<Computer> defectivecomputers = computerDAO.getAllDefectiveComputers();
-//        defectivecomputers.forEach(dcomputerget -> System.out.println(dcomputerget.toString()));
-
-
 
         primaryStage.show();
 

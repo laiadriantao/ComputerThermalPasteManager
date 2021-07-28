@@ -5,10 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -20,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class ComputerController implements Initializable {
 
-        @FXML private TableView computerTable;
+        @FXML private TableView<Computer> computerTable;
 
         @FXML private TableColumn idColumn;
 
@@ -31,6 +34,8 @@ public class ComputerController implements Initializable {
         @FXML private TableColumn nextColumn;
 
         @FXML private TableColumn revisionColumn;
+
+         ComputerDAO computerDao = new ComputerDAO();
 
         @Override @FXML
        public void initialize(URL location, ResourceBundle resources){
@@ -52,16 +57,36 @@ public class ComputerController implements Initializable {
                 for(Computer comp : compList){
                         compObsList.add(comp);
                 }
-              //  compList.forEach(comp -> compList.add(comp));
                 return compObsList;
         }
 
-    public void  addComputer(){
-            ComputerDAO computerDao = new ComputerDAO();
+    public void  addRow(){
             Computer computer = new Computer();
             computer.setLastRevisionDate(LocalDate.now());
             computer.setNextRevisionDate(LocalDate.now().plusYears(2));
             computerDao.saveComputer(computer);
              computerTable.setItems(getCompList());
     }
+    public void deleteRow(){
+            int getID = computerTable.getSelectionModel().getSelectedItem().getId();
+            Computer computer = new Computer();
+            computer.setId(getID);
+            computerDao.deleteComputer(computer);
+            computerTable.setItems(getCompList());
+    }
+
+    public void updateRowRevision(){
+            Computer computer = new Computer();
+            int getID = computerTable.getSelectionModel().getSelectedItem().getId();
+            LocalDate getCreateD= computerTable.getSelectionModel().getSelectedItem().getCreationDate();
+            computer.setId(getID);
+            computer.setCreationDate(getCreateD);
+            computer.setLastRevisionDate(LocalDate.now());
+            computer.setNextRevisionDate(LocalDate.now().plusYears(2));
+            computer.setNeedsRevision(false);
+            computerDao.updateComputer(computer);
+            computerTable.setItems(getCompList());
+
+    }
+
 }

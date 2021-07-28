@@ -1,6 +1,5 @@
 package adrian.lai;
 
-import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -8,7 +7,7 @@ import java.util.List;
 
 public class ComputerDAO {
 
-    // save is good
+
     public void saveComputer(Computer computer){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -22,7 +21,6 @@ public class ComputerDAO {
         }
     }
 
-    //update is good
     public void updateComputer(Computer computer){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -36,7 +34,7 @@ public class ComputerDAO {
         }
     }
 
-    //delete is now ok
+
     public void deleteComputer(Computer id){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -51,8 +49,7 @@ public class ComputerDAO {
 
     }
 
-    //new get
-    public List<Computer> getComputer(){
+    public List<Computer> getComputers(){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("from computer").list();
         }
@@ -74,12 +71,6 @@ public class ComputerDAO {
 //        return computer;
 //    }
 
-    //    public List<Computer> getAllComputers(){
-//
-//        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
-//            //System.out.println("\nYour computer list");
-//            return session.createQuery("from computer", Computer.class).list();
-//        }
 //    }
 //    public List<Computer> getAllDefectiveComputers(){
 //
