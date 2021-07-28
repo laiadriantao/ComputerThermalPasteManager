@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import adrian.lai.Computer ?>
 
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adrian.lai.ComputerController">
    <columnConstraints>
       <ColumnConstraints />
@@ -19,26 +20,36 @@
    <rowConstraints>
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
-      <TableView prefHeight="200.0" prefWidth="434.0" GridPane.columnIndex="4" GridPane.rowIndex="1" fx:id="computerTable">
+      <TableView fx:id="computerTable" prefHeight="200.0" prefWidth="593.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
         <columns>
-            <TableColumn  prefWidth="30.0" resizable="false" text="ID" fx:id="idColumn">
-                <cellValueFactory><PropertyValueFactory property ="id"/></cellValueFactory>
+            <TableColumn fx:id="idColumn" prefWidth="34.40002363920212" resizable="false" text="ID">
+                <cellValueFactory><PropertyValueFactory property="id" /></cellValueFactory>
         </TableColumn>
-          <TableColumn  prefWidth="100.0" resizable="false" text="Creation Date" fx:id="creationColumn">
-              <cellValueFactory><PropertyValueFactory property ="creationDate"/></cellValueFactory>
+          <TableColumn fx:id="creationColumn" prefWidth="123.19995498657227" resizable="false" text="Creation Date">
+              <cellValueFactory><PropertyValueFactory property="creationDate" /></cellValueFactory>
       </TableColumn>
-            <TableColumn  prefWidth="100.0" resizable="false" text="Last Revision " fx:id="lastColumn">
-                <cellValueFactory><PropertyValueFactory property ="lastRevisionDate"/></cellValueFactory>
+            <TableColumn fx:id="lastColumn" prefWidth="142.40000915527344" resizable="false" text="Last Revision ">
+                <cellValueFactory><PropertyValueFactory property="lastRevisionDate" /></cellValueFactory>
    </TableColumn>
-            <TableColumn  prefWidth="100.0" resizable="false" text="Next Revision" fx:id="nextColumn">
-                <cellValueFactory><PropertyValueFactory property ="nextRevisionDate"/></cellValueFactory>
+            <TableColumn fx:id="nextColumn" prefWidth="144.00006103515625" resizable="false" text="Next Revision">
+                <cellValueFactory><PropertyValueFactory property="nextRevisionDate" /></cellValueFactory>
 </TableColumn>
-            <TableColumn prefWidth="100.0" resizable="false"  text="Needs Revision" fx:id="revisionColumn">
-                <cellValueFactory><PropertyValueFactory property ="needsRevision"/></cellValueFactory>
+            <TableColumn fx:id="revisionColumn" prefWidth="159.199951171875" resizable="false" text="Needs Revision">
+                <cellValueFactory><PropertyValueFactory property="needsRevision" /></cellValueFactory>
         </TableColumn>
         </columns>
       </TableView>
+      <HBox prefHeight="15.0" prefWidth="600.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addComputer" text="Add new computer" />
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" text="Delete computer" />
+            <Button fx:id="revision" mnemonicParsing="false" text="Update Revision " />
+            <Button mnemonicParsing="false" text="Refresh list" />
+         </children>
+      </HBox>
    </children>
 </GridPane>
