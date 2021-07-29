@@ -29,4 +29,4 @@ CRUD operations regarding computer revisions.
 
 2. Why is the interval two years?
 
-- After owning my own computer for a good while, 2 years seems to be the best interval.
+- After owning my computer for a good while, 2 years seems to be the best interval.
