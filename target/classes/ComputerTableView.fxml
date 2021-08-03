@@ -5,64 +5,101 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane prefHeight="447.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adrian.lai.ComputerController">
-<!--   <columnConstraints>-->
-<!--      <ColumnConstraints />-->
-<!--      <ColumnConstraints />-->
-<!--      <ColumnConstraints />-->
-<!--      <ColumnConstraints />-->
-<!--      <ColumnConstraints />-->
-<!--   </columnConstraints>-->
-<!--   <rowConstraints>-->
-<!--      <RowConstraints />-->
-<!--      <RowConstraints />-->
-<!--      <RowConstraints />-->
-<!--      <RowConstraints />-->
-<!--   </rowConstraints>-->
+
+<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adrian.lai.ComputerController">
    <children>
-      <AnchorPane prefHeight="323.0" prefWidth="714.0">
+      <AnchorPane prefHeight="450.0" prefWidth="700.0">
+      <!--   <columnConstraints>-->
+      <!--      <ColumnConstraints />-->
+      <!--      <ColumnConstraints />-->
+      <!--      <ColumnConstraints />-->
+      <!--      <ColumnConstraints />-->
+      <!--      <ColumnConstraints />-->
+      <!--   </columnConstraints>-->
+      <!--   <rowConstraints>-->
+      <!--      <RowConstraints />-->
+      <!--      <RowConstraints />-->
+      <!--      <RowConstraints />-->
+      <!--      <RowConstraints />-->
+      <!--   </rowConstraints>-->
          <children>
-            <TableView fx:id="computerTable" layoutX="84.0" layoutY="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="548.0">
-              <columns>
-                  <TableColumn fx:id="idColumn" maxWidth="29.5999755859375" prefWidth="29.5999755859375" resizable="false" text="ID">
-                      <cellValueFactory>
-                        <PropertyValueFactory property="id" />
-                     </cellValueFactory>
-              </TableColumn>
-                <TableColumn fx:id="creationColumn" maxWidth="116.00000762939453" prefWidth="116.00000762939453" resizable="false" text="Creation Date">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="creationDate" />
-                     </cellValueFactory>
-            </TableColumn>
-                  <TableColumn fx:id="lastColumn" maxWidth="136.800048828125" prefWidth="136.800048828125" resizable="false" text="Last Revision ">
-                      <cellValueFactory>
-                        <PropertyValueFactory property="lastRevisionDate" />
-                     </cellValueFactory>
-         </TableColumn>
-                  <TableColumn fx:id="nextColumn" maxWidth="129.60003662109375" minWidth="0.0" prefWidth="129.60003662109375" resizable="false" text="Next Revision">
-                      <cellValueFactory>
-                        <PropertyValueFactory property="nextRevisionDate" />
-                     </cellValueFactory>
-      </TableColumn>
-                  <TableColumn fx:id="revisionColumn" editable="false" maxWidth="144.80001831054688" prefWidth="130.39987182617188" resizable="false" text="Needs Revision">
-                      <cellValueFactory>
-                        <PropertyValueFactory property="needsRevision" />
-                     </cellValueFactory>
-              </TableColumn>
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="150.0" layoutY="319.0" prefHeight="66.0" prefWidth="314.0">
-         <children>
-            <Button alignment="CENTER" layoutX="306.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteRow" text="Delete computer" />
-            <Button fx:id="revision" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateRowRevision" text="Update Revision " />
-            <Button layoutX="153.0" layoutY="20.0" mnemonicParsing="false" onAction="#addRow" text="Add new computer" />
+            <StackPane>
+               <children>
+                  <AnchorPane prefHeight="323.0" prefWidth="714.0">
+                     <children>
+                        <TableView fx:id="computerTable" layoutX="84.0" layoutY="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="548.0">
+                          <columns>
+                              <TableColumn fx:id="idColumn" maxWidth="39.99993896484375" prefWidth="39.99993896484375" resizable="false" text="ID">
+                                  <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                 </cellValueFactory>
+                          </TableColumn>
+                            <TableColumn fx:id="creationColumn" maxWidth="116.00000762939453" prefWidth="106.40003204345703" resizable="false" text="Creation Date">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="creationDate" />
+                                 </cellValueFactory>
+                        </TableColumn>
+                              <TableColumn fx:id="lastColumn" maxWidth="136.800048828125" prefWidth="136.800048828125" resizable="false" text="Last Revision ">
+                                  <cellValueFactory>
+                                    <PropertyValueFactory property="lastRevisionDate" />
+                                 </cellValueFactory>
+                     </TableColumn>
+                              <TableColumn fx:id="nextColumn" maxWidth="129.60003662109375" minWidth="0.0" prefWidth="129.60003662109375" resizable="false" text="Next Revision">
+                                  <cellValueFactory>
+                                    <PropertyValueFactory property="nextRevisionDate" />
+                                 </cellValueFactory>
+                  </TableColumn>
+                              <TableColumn fx:id="revisionColumn" editable="false" maxWidth="144.80001831054688" prefWidth="130.39987182617188" resizable="false" text="Needs Revision">
+                                  <cellValueFactory>
+                                    <PropertyValueFactory property="needsRevision" />
+                                 </cellValueFactory>
+                          </TableColumn>
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane layoutX="83.0" layoutY="323.0">
+               <children>
+                  <AnchorPane prefHeight="86.0" prefWidth="548.0">
+                     <children>
+                        <StackPane layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="127.0">
+                           <children>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#deleteRow" prefHeight="26.0" prefWidth="127.0" text="Delete computer" />
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="146.0" layoutY="14.0" prefHeight="26.0" prefWidth="127.0">
+                           <children>
+                              <Button fx:id="revision" mnemonicParsing="false" onAction="#updateRowRevision" prefHeight="26.0" prefWidth="127.0" text="Update Revision " />
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="406.0" layoutY="46.0" prefHeight="26.0" prefWidth="127.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#getCompList" prefHeight="26.0" prefWidth="127.0" text="Refresh " />
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="146.0" layoutY="46.0" prefHeight="26.0" prefWidth="127.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#slowAddRow" prefHeight="26.0" prefWidth="127.0" text="Computer w/ date" />
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="14.0" layoutY="46.0" prefHeight="26.0" prefWidth="127.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#addRow" prefHeight="26.0" prefWidth="127.0" text="Instant Computer" />
+                           </children>
+                        </StackPane>
+                        <Button layoutX="406.0" layoutY="14.0" mnemonicParsing="false" onAction="#checkingForRevision" prefHeight="26.0" prefWidth="127.0" text="Check" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
          </children>
       </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>
