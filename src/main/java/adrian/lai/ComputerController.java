@@ -57,8 +57,10 @@ public class ComputerController implements Initializable {
                 revisionColumn.setCellValueFactory(new PropertyValueFactory<Computer, String>("needsRevision"));
         }
 
-        //Method to get and put all computers in form of the list
-        // This method is also used to refresh the list
+
+
+
+    //Method to get and put all computers in form of the list
         public ObservableList<Computer>  getCompList (){
                 ObservableList<Computer> compObsList= FXCollections.observableArrayList();
                 for(Computer comp : computerDao.getComputers()){
@@ -66,6 +68,11 @@ public class ComputerController implements Initializable {
                 }
                 return compObsList;
         }
+
+    // This method is also used to refresh the list
+    public void refreshList(){
+        computerTable.setItems(getCompList());
+    }
 
         //Method to add new computer object instantly
     public void  addRow(){
