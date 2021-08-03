@@ -25,7 +25,7 @@ public class Computer {
     private boolean needsRevision;
 
 
-    //creates computer with date input
+    //constructor with date input
     public Computer(LocalDate creationDate){
         this.creationDate = creationDate;
         this.lastRevisionDate = creationDate;
@@ -40,7 +40,7 @@ public class Computer {
 
     }
 
-    //creates computer at current date
+    //constructor with instant date
     public Computer(){
         this.creationDate = LocalDate.now();
         this.lastRevisionDate = creationDate;

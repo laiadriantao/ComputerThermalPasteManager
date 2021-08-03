@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ComputerDAO {
 
-
+//method to save a Computer Object
     public void saveComputer(Computer computer){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -21,6 +21,7 @@ public class ComputerDAO {
         }
     }
 
+    //method to update Computer Object
     public void updateComputer(Computer computer){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -34,7 +35,7 @@ public class ComputerDAO {
         }
     }
 
-
+//Method to delete a Computer Object
     public void deleteComputer(Computer id){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -49,13 +50,22 @@ public class ComputerDAO {
 
     }
 
+    //method to get all Computer objects in the form of  a list
     public List<Computer> getComputers(){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("from computer").list();
         }
     }
 
+    //method to get all Computer objects that need revision
+    public List<Computer> getAllDefectiveComputers(){
 
+        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+            //System.out.println("\nChecking for any dried up thermalpaste...");
+            List<Computer> defComp = session.createQuery("from computer where needs_revision = 1", Computer.class).list();
+            return defComp;
+        }
+    }
     //    public Computer getByIdComputer(int id){
 //        Transaction transaction = null;
 //        Computer computer = null;
@@ -70,22 +80,6 @@ public class ComputerDAO {
 //        }
 //        return computer;
 //    }
-
-//    }
-//    public List<Computer> getAllDefectiveComputers(){
-//
-//        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
-//            System.out.println("\nChecking for any dried up thermalpaste...");
-//            List<Computer> defComp = session.createQuery("from computer where needs_revision = 1", Computer.class).list();
-//            if(defComp.isEmpty() == true){
-//                System.out.println("It's all good!");
-//            } else {
-//                System.out.println("\nIt's revision day!");
-//            }
-//            return session.createQuery("from computer where needs_revision = 1", Computer.class).list();
-//        }
-//    }
-
 
 
 }
