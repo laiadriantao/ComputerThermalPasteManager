@@ -11,19 +11,6 @@
 <StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adrian.lai.ComputerController">
    <children>
       <AnchorPane prefHeight="450.0" prefWidth="700.0">
-      <!--   <columnConstraints>-->
-      <!--      <ColumnConstraints />-->
-      <!--      <ColumnConstraints />-->
-      <!--      <ColumnConstraints />-->
-      <!--      <ColumnConstraints />-->
-      <!--      <ColumnConstraints />-->
-      <!--   </columnConstraints>-->
-      <!--   <rowConstraints>-->
-      <!--      <RowConstraints />-->
-      <!--      <RowConstraints />-->
-      <!--      <RowConstraints />-->
-      <!--      <RowConstraints />-->
-      <!--   </rowConstraints>-->
          <children>
             <StackPane>
                <children>
