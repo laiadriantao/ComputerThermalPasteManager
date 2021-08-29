@@ -33,12 +33,3 @@ https://projectlombok.org/
 
 #### 4. Delete
 1. Deletes the chosen computer
-
-# What's next?
-After going through my application again I realise there is place for improvement but due to it being a school project I can't perform any changes to this specific repository.
-
-
-
-
-
-
